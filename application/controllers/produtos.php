@@ -1,4 +1,4 @@
-<?php
+<?php if (! defined('BASEPATH')) exit ('No direct scrip access allowed');
 
 
 class Produtos extends CI_Controller
@@ -13,7 +13,7 @@ class Produtos extends CI_Controller
 
         $dados = array("produtos"=> $produtos);
         $this->load->helper("currency");//helper chamado para tratar o valor obs sempre tem q chamar helper quando usar um
+        $this->load->helper('form');
         $this->load->view("produtos/index.php", $dados);
-        
     }
 }
