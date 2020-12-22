@@ -12,9 +12,23 @@
                     <td><?= numeroEmReais($produto["preco"])?></td>
                 </tr>
             <?php endforeach ?>
-            
-
+        
             </table>  
+
+            <h1> Login </h1>
+            <form method="post" class="form-control" action="http://localhost:8080/login/autenticar" enctype="multipart/form-data" >
+            <div class="">
+                    <h5>Email</h5>
+                    <input name="email" class="form-control" type="text" size="50">
+
+                    <h5>Senha</h5>
+                    <input name="senha" class="form-control" type="password" size="50">
+                </div>
+
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary" title="Salvar dados" data-tooltip="true">Salvar</button>
+                </div>
+            </form>
 
             <h1>Cadastro</h1>
             <form method="post" class="form-control" action="http://localhost:8080/usuarios/novo" enctype="multipart/form-data" >
