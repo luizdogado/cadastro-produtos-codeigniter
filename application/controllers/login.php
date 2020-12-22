@@ -12,7 +12,7 @@ class Login extends CI_Controller
             $this->session->set_userdata("usuario_logado",$usuario);// coloca na session o usuario q ta logado, precisa por key de criptografica para isso 
             $this->session->set_flashdata("success", "logado  com suscesso!");
         }else {
-            $this->session->set_flashdata("success", "Usuario ou senha invalida.");
+            $this->session->set_flashdata("danger", "Usuario ou senha invalida.");
         }    
         redirect('http://localhost:8080/');
     }

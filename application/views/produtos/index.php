@@ -5,7 +5,8 @@
     <body>
         <div class="container">
 
-            <?= $this->session->flashdata("success") ?>
+            <p class = "alert-success"><?= $this->session->flashdata("success") ?></p>
+            <p class = "alert-danger"><?= $this->session->flashdata("danger") ?></p>
 
             
             <h1>Produtos</h1>
