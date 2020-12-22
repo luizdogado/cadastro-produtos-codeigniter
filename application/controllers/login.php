@@ -9,6 +9,7 @@ class Login extends CI_Controller
         $senha=md5($this->input->post("senha"));
         $usuario = $this->usuarios_model->buscaPorEmailESenha($email, $senha);
         if($usuario){
+            $this->session->set_userdata("usuario_logado",$usuario);
             $dados = array("mensagem"=>"Logado com suscesso");
         }else {
             $dados = array("mensagem"=>"usuario ou senha invalidos");

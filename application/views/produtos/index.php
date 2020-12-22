@@ -12,9 +12,9 @@
                     <td><?= numeroEmReais($produto["preco"])?></td>
                 </tr>
             <?php endforeach ?>
-        
             </table>  
 
+            <?php if (!$this->session->userdata("usuario_logado")) : ?>
             <h1> Login </h1>
             <form method="post" class="form-control" action="http://localhost:8080/login/autenticar" enctype="multipart/form-data" >
             <div class="">
@@ -47,6 +47,7 @@
                     <button type="submit" class="btn btn-primary" title="Salvar dados" data-tooltip="true">Salvar</button>
                 </div>
             </form>
+            <?php endif ?>
         </div>
     </body>
 </html>
