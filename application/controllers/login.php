@@ -9,12 +9,19 @@ class Login extends CI_Controller
         $senha=md5($this->input->post("senha"));
         $usuario = $this->usuarios_model->buscaPorEmailESenha($email, $senha);
         if($usuario){
-            $this->session->set_userdata("usuario_logado",$usuario);
-            $dados = array("mensagem"=>"Logado com suscesso");
+            $this->session->set_userdata("usuario_logado",$usuario);// coloca na session o usuario q ta logado, precisa por key de criptografica para isso 
+            $this->session->set_flashdata("success", "logado  com suscesso!");
         }else {
-            $dados = array("mensagem"=>"usuario ou senha invalidos");
+            $this->session->set_flashdata("success", "Usuario ou senha invalida.");
         }    
-        $this->load->view("login/autenticar", $dados);
+        redirect('http://localhost:8080/');
+    }
+
+
+    public function logout()
+    {
+        $this->session->unset_userdata("usuario_logado");// tira o usuario logado do session
+        redirect('http://localhost:8080/');
     }
 
 

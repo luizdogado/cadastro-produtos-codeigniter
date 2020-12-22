@@ -4,6 +4,10 @@
     </head>
     <body>
         <div class="container">
+
+            <?= $this->session->flashdata("success") ?>
+
+            
             <h1>Produtos</h1>
             <table class="table">
             <?php foreach($produtos as $produto) : ?>
@@ -14,7 +18,12 @@
             <?php endforeach ?>
             </table>  
 
-            <?php if (!$this->session->userdata("usuario_logado")) : ?>
+            <?php if ($this->session->userdata("usuario_logado")) : ?>
+                <a method="post" class="btn btn-primary" href="http://localhost:8080/login/logout">Logout</a>
+
+                <?php else : ?>
+                
+
             <h1> Login </h1>
             <form method="post" class="form-control" action="http://localhost:8080/login/autenticar" enctype="multipart/form-data" >
             <div class="">
