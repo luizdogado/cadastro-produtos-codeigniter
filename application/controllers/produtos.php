@@ -13,7 +13,7 @@ class Produtos extends CI_Controller
 
 
         $dados = array("produtos"=> $produtos);
-        $this->load->helper(array('currency'));//helper chamado para tratar o valor obs sempre tem q chamar helper quando usar um
+        $this->load->helper('currency');//helper chamado para tratar o valor obs sempre tem q chamar helper quando usar um
         $this->load->view("produtos/index", $dados);
     }
     
@@ -43,6 +43,7 @@ class Produtos extends CI_Controller
         $this->load->model("produtos_model");
         $produto = $this->produtos_model->busca($id);
         $dados = array("produto" => $produto);
+        $this->load->helper(array('typography', 'currency'));// helper que converte linguagem de programacaco para html exemplo /n para /br
         $this->load->view("produtos/mostra", $dados);
     }
 

@@ -32,9 +32,9 @@
 
                     <?php else : ?>
 
-                <div class="container">
                 <div class="row">
                 <div class="col-md-6">
+                
                 <h1>Cadastro</h1>
                 <form method="post" action="usuarios/novo" enctype="multipart/form-data" >
                     <div class="form-control">
