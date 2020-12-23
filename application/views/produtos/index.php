@@ -25,10 +25,10 @@
                 </table>  
 
                 <?php if ($this->session->userdata("usuario_logado")) : ?>
-                    <a method="post" class="btn btn-primary" href="http://localhost:8080/produtos/formulario">Novo Produto</a>
+                    <a method="post" class="btn btn-primary" href="produtos/formulario">Novo Produto</a>
 
 
-                    <a method="post" class="btn btn-primary" href="http://localhost:8080/login/logout">Logout</a>
+                    <a method="post" class="btn btn-primary" href="login/logout">Logout</a>
 
                     <?php else : ?>
 
@@ -36,7 +36,7 @@
                 <div class="row">
                 <div class="col-md-6">
                 <h1>Cadastro</h1>
-                <form method="post" action="http://localhost:8080/usuarios/novo" enctype="multipart/form-data" >
+                <form method="post" action="usuarios/novo" enctype="multipart/form-data" >
                     <div class="form-control">
                         <h5>Nome</h5>
                         <input name="nome" class="form-control" type="text" size="50">
@@ -57,7 +57,7 @@
                 <div class="col-md-6">
 
                 <h1> Login </h1>
-                <form method="post" action="http://localhost:8080/login/autenticar" enctype="multipart/form-data" >
+                <form method="post" action="login/autenticar" enctype="multipart/form-data" >
                 <div class="form-control">
                         <h5>Email</h5>
                         <input name="email" class="form-control" type="text" size="50">
