@@ -1,3 +1,0 @@
-<html>
-    <?=$mensagem?>
-</html>

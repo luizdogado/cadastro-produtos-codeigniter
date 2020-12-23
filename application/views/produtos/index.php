@@ -33,7 +33,7 @@
 
                 <div class="container">
                 <div class="row">
-                <div class="col">
+                <div class="col-md-6">
                 <h1>Cadastro</h1>
                 <form method="post" action="http://localhost:8080/usuarios/novo" enctype="multipart/form-data" >
                     <div class="form-control">
@@ -53,7 +53,7 @@
                 </form>
 
                 </div>
-                <div class="col">
+                <div class="col-md-6">
 
                 <h1> Login </h1>
                 <form method="post" action="http://localhost:8080/login/autenticar" enctype="multipart/form-data" >
