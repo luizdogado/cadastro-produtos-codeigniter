@@ -5,9 +5,12 @@
     <body>
         <div class="container">
 
-            <p class = "alert-success"><?= $this->session->flashdata("success") ?></p>
-            <p class = "alert-danger"><?= $this->session->flashdata("danger") ?></p>
-
+            <?php if ($this->session->flashdata("success")) :?>       
+            <p class = "alert alert-success"><?= $this->session->flashdata("success") ?></p>
+            <?php endif ?>
+            <?php if ($this->session->flashdata("danger")) :?> 
+            <p class = "alert alert-danger"><?= $this->session->flashdata("danger") ?></p>
+            <?php endif ?>
             
             <h1>Produtos</h1>
             <table class="table">
@@ -20,14 +23,17 @@
             </table>  
 
             <?php if ($this->session->userdata("usuario_logado")) : ?>
+                <a method="post" class="btn btn-primary" href="http://localhost:8080/produtos/formulario">Novo Produto</a>
+
+
                 <a method="post" class="btn btn-primary" href="http://localhost:8080/login/logout">Logout</a>
 
                 <?php else : ?>
                 
 
             <h1> Login </h1>
-            <form method="post" class="form-control" action="http://localhost:8080/login/autenticar" enctype="multipart/form-data" >
-            <div class="">
+            <form method="post" action="http://localhost:8080/login/autenticar" enctype="multipart/form-data" >
+            <div class="form-control">
                     <h5>Email</h5>
                     <input name="email" class="form-control" type="text" size="50">
 
@@ -41,8 +47,8 @@
             </form>
 
             <h1>Cadastro</h1>
-            <form method="post" class="form-control" action="http://localhost:8080/usuarios/novo" enctype="multipart/form-data" >
-                <div class="">
+            <form method="post" action="http://localhost:8080/usuarios/novo" enctype="multipart/form-data" >
+                <div class="form-control">
                     <h5>Nome</h5>
                     <input name="nome" class="form-control" type="text" size="50">
 

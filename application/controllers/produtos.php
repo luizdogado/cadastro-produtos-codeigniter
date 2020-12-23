@@ -13,7 +13,28 @@ class Produtos extends CI_Controller
 
 
         $dados = array("produtos"=> $produtos);
-        $this->load->helper(array('form','currency'));//helper chamado para tratar o valor obs sempre tem q chamar helper quando usar um
-        $this->load->view("produtos/index.php", $dados);
+        $this->load->helper(array('currency'));//helper chamado para tratar o valor obs sempre tem q chamar helper quando usar um
+        $this->load->view("produtos/index", $dados);
     }
+    
+    public function formulario()
+    {
+        $this->load->view("produtos/formulario");
+    }
+
+    public function novo()
+    {
+        $usuarioLogado = $this->session->userdata("usuario_logado");
+        $produtos = array(//pega o vem pelo moetodo post do site e coloca em cada lugar correto para salvar no banco de dados
+            "nome" => $this->input->post("nome"),
+            "descricao" => $this->input->post("descricao"),
+            "preco" => $this->input->post("preco"),
+            "usuario_id" => $usuarioLogado["id"]
+        );
+        $this->load->model("produtos_model");//chama a model
+        $this->produtos_model->salva($produtos);//chama a function salva dentro da produtos_model
+        $this->session->set_flashdata("success", "Produto salvo com sucesso");
+        redirect("http://localhost:8080/");
+    }
+
 }
