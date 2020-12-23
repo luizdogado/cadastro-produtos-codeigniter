@@ -11,7 +11,8 @@ class Usuarios extends CI_Controller
             );
             $this->load->model("usuarios_model");//qual local do banco
             $this->usuarios_model->salvar($usuario);//pegar dado do campo salvar e coloca em usuario
-            $this->load->view("usuarios/novo");//carrega a nova view
+            $this->session->set_flashdata("success", "Cadastro feito com sucesso!");
+            redirect('http://localhost:8080/');
         
     }
 }
