@@ -29,7 +29,6 @@
                 <a method="post" class="btn btn-primary" href="http://localhost:8080/login/logout">Logout</a>
 
                 <?php else : ?>
-                
 
             <h1> Login </h1>
             <form method="post" action="http://localhost:8080/login/autenticar" enctype="multipart/form-data" >
@@ -42,7 +41,7 @@
                 </div>
 
                 <div class="text-center mt-3">
-                    <button type="submit" class="btn btn-primary" title="Salvar dados" data-tooltip="true">Salvar</button>
+                    <button type="submit" class="btn btn-primary" title="Salvar dados" data-tooltip="true">Login</button>
                 </div>
             </form>
 
@@ -60,8 +59,9 @@
                 </div>
 
                 <div class="text-center mt-3">
-                    <button type="submit" class="btn btn-primary" title="Salvar dados" data-tooltip="true">Salvar</button>
+                    <button type="submit" class="btn btn-primary" title="Salvar dados" data-tooltip="true">Cadastrar</button>
                 </div>
+
             </form>
             <?php endif ?>
         </div>
