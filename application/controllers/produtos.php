@@ -34,7 +34,16 @@ class Produtos extends CI_Controller
         $this->load->model("produtos_model");//chama a model
         $this->produtos_model->salva($produtos);//chama a function salva dentro da produtos_model
         $this->session->set_flashdata("success", "Produto salvo com sucesso");
-        redirect("http://localhost:8080/");
+        redirect("/");
+    }
+
+    public function mostra()
+    {
+        $id = $this->input->get("id");// pega id q vai ser enviado na url e coloca na variavel $id
+        $this->load->model("produtos_model");
+        $produto = $this->produtos_model->busca($id);
+        $dados = array("produto" => $produto);
+        $this->load->view("produtos/mostra", $dados);
     }
 
 }

@@ -17,7 +17,8 @@
                 <table class="table">
                 <?php foreach($produtos as $produto) : ?>
                     <tr>
-                        <td><?= $produto["nome"]?></td>
+                        <td>
+                            <?= anchor("produtos/mostra?id={$produto['id']}", $produto["nome"]) ?></td>
                         <td><?= numeroEmReais($produto["preco"])?></td>
                     </tr>
                 <?php endforeach ?>
@@ -48,7 +49,7 @@
                     </div>
 
                     <div class="text-center mt-3">
-                        <button type="submit" class="btn btn-primary" title="Salvar dados" data-tooltip="true">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary" title="Novo" data-tooltip="true">Cadastrar</button>
                     </div>
                 </form>
 
@@ -66,7 +67,7 @@
                     </div>
 
                     <div class="text-center mt-3">
-                        <button type="submit" class="btn btn-primary" title="Salvar dados" data-tooltip="true">Login</button>
+                        <button type="submit" class="btn btn-primary" title="autenticar" data-tooltip="true">Login</button>
                     </div>
                 </form>
 
