@@ -37,9 +37,8 @@ class Produtos extends CI_Controller
         redirect("/");
     }
 
-    public function mostra()
+    public function mostra($id)
     {
-        $id = $this->input->get("id");// pega id q vai ser enviado na url e coloca na variavel $id
         $this->load->model("produtos_model");
         $produto = $this->produtos_model->busca($id);
         $dados = array("produto" => $produto);

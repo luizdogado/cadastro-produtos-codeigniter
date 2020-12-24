@@ -9,6 +9,7 @@
                 <?php if ($this->session->flashdata("success")) :?>       
                 <p class = "alert alert-success"><?= $this->session->flashdata("success") ?></p>
                 <?php endif ?>
+
                 <?php if ($this->session->flashdata("danger")) :?> 
                 <p class = "alert alert-danger"><?= $this->session->flashdata("danger") ?></p>
                 <?php endif ?>
@@ -17,8 +18,8 @@
                 <table class="table">
                 <?php foreach($produtos as $produto) : ?>
                     <tr>
-                        <td>
-                            <?= anchor("produtos/mostra?id={$produto['id']}", $produto["nome"]) ?></td>
+                        <td><?= anchor("produtos/mostra/{$produto['id']}", $produto["nome"]) ?></td>
+                        <td><?= character_limiter($produto["descricao"], 10);?></td>
                         <td><?= numeroEmReais($produto["preco"])?></td>
                     </tr>
                 <?php endforeach ?>
