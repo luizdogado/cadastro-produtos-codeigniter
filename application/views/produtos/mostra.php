@@ -6,7 +6,7 @@
         <div class="container">
             <h2><?= $produto["nome"]?></br></h2>      
             Preco: <?= numeroEmReais($produto["preco"])?></br>      
-            <?= auto_typography($produto["descricao"])?>
+            <?= auto_typography(html_escape($produto["descricao"]))?>
         </div>  
     </body>
 </html>      
