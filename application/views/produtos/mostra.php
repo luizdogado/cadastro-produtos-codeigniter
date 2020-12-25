@@ -7,6 +7,7 @@
             <h2><?= $produto["nome"]?></br></h2>      
             Preco: <?= numeroEmReais($produto["preco"])?></br>      
             <?= auto_typography(html_escape($produto["descricao"]))?>
-        </div>  
+        <a method="post" class="btn btn-primary" href="http://localhost:8080/produtos/voltar">Voltar</a>
+        </div>
     </body>
 </html>      
