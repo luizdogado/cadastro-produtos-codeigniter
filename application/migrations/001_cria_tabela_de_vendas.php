@@ -6,15 +6,15 @@ class Migration_Cria_tabela_de_vendas extends CI_Migration
     public function up()//metodo que eh chamado para criar uma migrastion
     {   
         $this->dbforge->add_field(array(//cria um array com os dados da tabela q vai ser criada 
-            'id' => array(
-                'type' => 'INT',
-                'serial' => true
+            'id' =>array(
+                'type' => 'INT4',
+                'auto_increment' => true
             ),
             'produto_id' => array (
-                'type' => 'INT'
+                'type' => 'INT4'
             ),
             'comprador_id' => array(
-                'type' => 'INT'
+                'type' => 'INT4'
             ),
             'data_de_entrega' => array(
                 'type' => 'DATE'
