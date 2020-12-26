@@ -5,7 +5,10 @@ class Produtos_model extends CI_Model
 
     public function buscaTodos()
     {
-        return $this->db->get("produtos")->result_array();//metodo que fazer busca 
+        return $this->db->get_where("produtos", array(//traz do banco os produtos com campo vendido false
+            "vendido" => "0"
+        ))->result_array();//metodo que fazer busca 
+        
     }
 
     public function salva($produto)
