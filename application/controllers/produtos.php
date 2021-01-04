@@ -19,11 +19,13 @@ class Produtos extends CI_Controller
     
     public function formulario()
     {
+        autoriza();
         $this->load->view("produtos/formulario");
     }
 
     public function novo()
     {
+        $usuarioLogado = autoriza();
         // a biblioteca "form_validation" foi carregada no autoload
         $this->form_validation->set_rules("nome", "Nome", "required|min_leght[5]"); // pelo form_validation ->seta uma regra-> no campo nome, no label nome a regra required(obrigatorio) min_leght(tamanho minimo)
         $this->form_validation->set_rules("descricao", "Descricao", "required|min_leght[10]"); // pelo form_validation ->seta uma regra-> no campo descricao, no label descricao a regra required(obrigatorio) min_leght(tamanho minimo)

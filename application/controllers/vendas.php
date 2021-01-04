@@ -5,7 +5,7 @@ class Vendas extends CI_Controller
 
     public function novo()
     {
-        $usuario=$this->session->userdata("usuario_logado"); // pega o usuario logado
+        $usuario = autoriza();// soh tem acesso a pagina se passar pelo helper de autoriza
         $this->load->model("vendas_model");
         $venda = array(
             "produto_id" => $this->input->post("produto_id"),
@@ -19,7 +19,7 @@ class Vendas extends CI_Controller
 
     public function index()
     {
-        $usuario = $this->session->userdata("usuario_logado");//pega usuario logado
+        $usuario = autoriza(); // soh tem acesso a pagina se passar pelo helper de autoriza
         $this->load->model("produtos_model");
         $produtosVendidos = $this->produtos_model->buscaVendidos($usuario);
         $dados = array("produtosVendidos" => $produtosVendidos);
