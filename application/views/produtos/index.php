@@ -29,6 +29,7 @@
                 <div class="text-center mt-3">
                 <a method="post" class="btn btn-primary" href="produtos/formulario">Novo Produto</a>
 
+                <a method="post" class="btn btn-primary" href="vendas/index">Produtos Vendidos</a>
 
                 <a method="post" class="btn btn-primary" href="login/logout">Logout</a>
                 </div>
