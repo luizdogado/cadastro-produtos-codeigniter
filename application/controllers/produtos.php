@@ -6,6 +6,7 @@ class Produtos extends CI_Controller
 
     public function index()
     {
+
         $this->output->enable_profiler(FALSE);
         //$this->load->database();//chama o banco mas tem q ser condigurado em congig database.php
         $this->load->model("produtos_model");//carrega modelo
@@ -14,13 +15,13 @@ class Produtos extends CI_Controller
 
         $dados = array("produtos"=> $produtos);
         $this->load->helper('currency');//helper chamado para tratar o valor obs sempre tem q chamar helper quando usar um
-        $this->load->view("produtos/index", $dados);
+        @$this->load->template("produtos/index", $dados);//template foi uma function criada na pasta core para fazer load do cabecalho e rodape
     }
     
     public function formulario()
     {
         autoriza();
-        $this->load->view("produtos/formulario");
+        $this->load->template("produtos/formulario");
     }
 
     public function novo()
@@ -44,7 +45,7 @@ class Produtos extends CI_Controller
         $this->session->set_flashdata("success", "Produto salvo com sucesso");// se deu tudo certo mostra mensagem 
         redirect("/");
         } else {
-            $this->load->view("produtos/formulario");
+            $this->load->template("produtos/formulario");
         }
     }
 
@@ -54,7 +55,7 @@ class Produtos extends CI_Controller
         $produto = $this->produtos_model->busca($id);
         $dados = array("produto" => $produto);
         $this->load->helper(array('typography', 'currency'));// helper que converte linguagem de programacaco para html exemplo /n para /br
-        $this->load->view("produtos/mostra", $dados);
+        $this->load->template("produtos/mostra", $dados);
     }
 
     public function voltar()
